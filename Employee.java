@@ -25,6 +25,14 @@ public class Employee{
     private int calculateAge(int currentYear){
         return (currentYear - yearOfBirth);
     }
+    
+    public int setYearOfBirth(int yearOfBirth){
+        yearOfBirth = currentYear - age;
+    }
+    
+    public int getYearOfBirth(){
+        return this.yearOfBirth;
+    }
 
     /**
      * Returns true is an employee is above 16 years old
@@ -32,6 +40,10 @@ public class Employee{
     public boolean canDrive(){
         int age = calculateAge(2025);
         // to be completed
+        if age >= 16
+            System.print.outln("You can drive!");
+        else
+            System.print.out.ln("You need to wait" + 16 - age + "before you may drive.");
     }
 
     /*
@@ -39,6 +51,9 @@ public class Employee{
      */
     private double calculatePay(){
         // to be completed
+        int deductions = 30%
+        netPay = (unpaidHours * hourlyWage) - deductions;
+        return netPay;
     }
 
     /*
@@ -46,5 +61,8 @@ public class Employee{
      */
     public void paySalary(){
         // to be completed
+        System.print.outln(fullname+ "" + "has received a wire transfer of" + "" + netPay);
+        this.unpaidHours = 0.0;
+        return unpaidHours;
     }
 }
