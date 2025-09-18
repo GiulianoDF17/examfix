@@ -26,8 +26,8 @@ public class Employee{
         return (currentYear - yearOfBirth);
     }
     
-    public int setYearOfBirth(int yearOfBirth){
-        yearOfBirth = currentYear - age;
+    public void setYearOfBirth(int yearOfBirth){
+        this.yearOfBirth = yearOfBirth;
     }
     
     public int getYearOfBirth(){
@@ -40,19 +40,22 @@ public class Employee{
     public boolean canDrive(){
         int age = calculateAge(2025);
         // to be completed
-        if age >= 16
-            System.print.outln("You can drive!");
-        else
-            System.print.out.ln("You need to wait" + 16 - age + "before you may drive.");
+        if (age >= 16){
+            System.out.println("You can drive!");
+            return true;
+        }else{
+            System.out.println("You need to wait" + " " + (16 - age) + " " + "years " + "before you may drive.");
+            return false;
+        }
     }
-
+    
     /*
      * Returns the net pay for the outstanding unpaid hours
      */
     private double calculatePay(){
         // to be completed
-        int deductions = 30%
-        netPay = (unpaidHours * hourlyWage) - deductions;
+        double deductions = 0.70;
+        double netPay = (unpaidHours * hourlyWage) - deductions;
         return netPay;
     }
 
@@ -61,8 +64,8 @@ public class Employee{
      */
     public void paySalary(){
         // to be completed
-        System.print.outln(fullname+ "" + "has received a wire transfer of" + "" + netPay);
+        double netPay = calculatePay();
+        System.out.println( fullname + " " + "has received a wire transfer of" + " " + netPay );
         this.unpaidHours = 0.0;
-        return unpaidHours;
     }
 }
